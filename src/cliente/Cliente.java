@@ -31,7 +31,7 @@ public class Cliente {
 		ListadoProgramas listProgram = respuesta.getEntity(ListadoProgramas.class);
 		System.out.println("Numero de programa: " +  listProgram.getProgramList().size());
 		listProgram.getProgramList().stream().map(p->p.getTitulo()).forEach((titulo)->{
-//			System.out.println("	- Programa: " +  titulo);
+			System.out.println("	- Programa: " +  titulo);
 		});
 		
 //		Recuperar el programa “Acacias 38” (acacias-38) en formato XML. Muestra por la consola el número de emisiones.
@@ -40,7 +40,7 @@ public class Cliente {
 		Programa program = respuesta.getEntity(Programa.class);
 		System.out.println("Programa de acacias: " +  program.getNombre());
 		program.getEmision().stream().map(p->p.getTitulo()).forEach((titulo)->{
-//			System.out.println("	- Emisión: " +  titulo);
+			System.out.println("	- Emisión: " +  titulo);
 		});
 		
 //		Recuperar el programa filtrado “Acacias 38” (acacias-38) en formato XML.
@@ -51,7 +51,7 @@ public class Cliente {
 		Programa programFiltra = respuesta.getEntity(Programa.class);
 		System.out.println("Programa de acacias filtrado: " +  programFiltra.getNombre());
 		programFiltra.getEmision().stream().map(p->p.getTitulo()).forEach((titulo)->{
-//			System.out.println("	- Emisión filtrada por " + filtro + ": " +  titulo);
+			System.out.println("	- Emisión filtrada por " + filtro + ": " +  titulo);
 		});
 		
 //		Crear un documento de favoritos. Registrar en el documento de favoritos los programas “Acacias 38” (acacias-38) y “Águila Roja” (aguila-roja).
