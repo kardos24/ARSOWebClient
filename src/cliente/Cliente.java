@@ -96,7 +96,7 @@ public class Cliente {
 		resource = cliente.resource(URL_SERVICE_PROGRAM);
 		respuesta = resource.accept(MediaType.APPLICATION_JSON).method("GET", ClientResponse.class);
 		String listProgramJSON = respuesta.getEntity(String.class);
-		System.out.println("Numero de programa en JSON: " +  listProgramJSON);
+		System.out.println("Listado de programas en JSON: " +  listProgramJSON);
 
 
 
