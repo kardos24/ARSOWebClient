@@ -24,7 +24,6 @@ public class Cliente {
 	public static void main(String[] args) {
 		Client cliente = new Client();
 		
-
 //		Obtener el listado de programas en XML. Muestra por la consola los nombres.		
 		WebResource resource = cliente.resource(URL_SERVICE_PROGRAM);
 		ClientResponse respuesta = resource.method("GET", ClientResponse.class);
@@ -97,9 +96,13 @@ public class Cliente {
 		respuesta = resource.accept(MediaType.APPLICATION_JSON).method("GET", ClientResponse.class);
 		String listProgramJSON = respuesta.getEntity(String.class);
 		System.out.println("Listado de programas en JSON: " +  listProgramJSON);
-
-
-
+		
+		// Prueba atom
+		resource = cliente.resource(URL_SERVICE_PROGRAM + "/aguila-roja/atom");
+		respuesta = resource.accept(MediaType.APPLICATION_ATOM_XML).method("GET", ClientResponse.class);
+		String resultadoAtom = respuesta.getEntity(String.class);
+		System.out.println("\tResultado ATOM\n");
+		System.out.println(resultadoAtom);
 	}
 
 }
